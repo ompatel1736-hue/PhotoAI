@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0915">
+  <title>PhotoAI — Create Anything With AI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="logo">✦</span><span>Photo<span class="accent">AI</span></span></a>
+    <nav><a href="#create">Create</a><a href="#gallery">Gallery</a><a href="#about">About</a></nav>
+    <a class="pill-link" href="#create">Start creating <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="dot"></span> YOUR AI CREATIVE STUDIO</div>
+      <h1>Imagine it.<br><span class="gradient">Bring it to life.</span></h1>
+      <p class="hero-copy">Turn a simple idea into an original image. Describe what you imagine, choose a style, and let PhotoAI create.</p>
+      <a class="primary-link" href="#create">Create your first image <span>↓</span></a>
+      <div class="hero-art" aria-label="Abstract colorful AI art collage">
+        <div class="art-card art-one"><span>01 / DREAMSCAPE</span></div>
+        <div class="art-card art-two"><span>02 / FUTURE</span></div>
+        <div class="art-card art-three"><span>03 / FANTASY</span></div>
+      </div>
+    </section>
+
+    <section class="creator section" id="create">
+      <div class="section-heading">
+        <div><div class="eyebrow">THE CREATION LAB</div><h2>What will you imagine?</h2></div>
+        <span class="step-label">01 — CREATE</span>
+      </div>
+      <div class="workspace">
+        <form id="generator-form" class="controls">
+          <label for="prompt">Describe your image</label>
+          <textarea id="prompt" maxlength="2000" required placeholder="A tiny glass house in a magical forest at sunrise, cinematic lighting, intricate details..."></textarea>
+          <div class="counter"><span id="char-count">0</span>/2000</div>
+
+          <label>Choose a style</label>
+          <div class="chips" id="styles">
+            <button type="button" class="chip active" data-style="Photorealistic">Photorealistic</button>
+            <button type="button" class="chip" data-style="Anime">Anime</button>
+            <button type="button" class="chip" data-style="3D render">3D render</button>
+            <button type="button" class="chip" data-style="Cinematic">Cinematic</button>
+            <button type="button" class="chip" data-style="Watercolor">Watercolor</button>
+            <button type="button" class="chip" data-style="Fantasy art">Fantasy</button>
+          </div>
+
+          <div class="two-fields">
+            <div><label for="size">Image shape</label>
+              <select id="size"><option value="1024x1024">Square</option><option value="1024x1536">Portrait</option><option value="1536x1024">Landscape</option></select>
+            </div>
+            <div><label for="quality">Quality</label>
+              <select id="quality"><option value="low">Fast</option><option value="medium" selected>Balanced</option><option value="high">High detail</option></select>
+            </div>
+          </div>
+          <button class="generate" id="generate" type="submit"><span>✦</span> Generate image</button>
+          <p class="fine-print">AI generation may take a little while and may use paid API credits.</p>
+        </form>
+
+        <div class="result-panel">
+          <div class="result-top"><span>YOUR CANVAS</span><span id="status">READY WHEN YOU ARE</span></div>
+          <div id="result" class="result">
+            <div class="placeholder"><div class="placeholder-icon">✧</div><h3>Your creation starts here</h3><p>Your generated image will appear in this space.</p></div>
+          </div>
+          <div class="result-actions"><span id="result-caption">No image generated yet</span><a id="download" class="download disabled" href="#" download="photoai-image.png">Download image ↓</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery section" id="gallery">
+      <div class="section-heading"><div><div class="eyebrow">A LITTLE INSPIRATION</div><h2>Ideas have no limits.</h2></div><span class="step-label">02 — EXPLORE</span></div>
+      <div class="inspiration-grid">
+        <article class="inspiration insp-a"><span>FANTASY WORLDS</span></article>
+        <article class="inspiration insp-b"><span>FUTURE FORMS</span></article>
+        <article class="inspiration insp-c"><span>NEW PERSPECTIVES</span></article>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="eyebrow">MADE FOR IMAGINATION</div><h2>One prompt can open<br><span class="gradient">a thousand possibilities.</span></h2>
+      <p>PhotoAI is a simple creative space for turning words into visual ideas. Write a prompt, experiment with styles, and make something uniquely yours.</p>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="logo">✦</span><span>Photo<span class="accent">AI</span></span></a><span>Dream it. Create it.</span><span>© <span id="year"></span> PhotoAI</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
